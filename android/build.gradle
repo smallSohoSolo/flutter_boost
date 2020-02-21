@@ -40,7 +40,6 @@ dependencies {
     compileOnly 'androidx.appcompat:appcompat:1.0.0'
     compileOnly 'androidx.annotation:annotation:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-common-java8:2.1.0'
-    compileOnly 'com.alibaba:fastjson:1.2.41'
 
 }
 
