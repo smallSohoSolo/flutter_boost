@@ -76,16 +76,14 @@ class FlutterBoost {
       PostPushRoute postPush}) {
     if (Platform.isAndroid) {
       onPageStart();
-    }
-    assert(() {
-      () async {
-        if (Platform.isIOS) {
+    } else if (Platform.isIOS) {
+      assert(() {
+        () async {
           onPageStart();
-        }
-      }();
-
-      return true;
-    }());
+        }();
+        return true;
+      }());
+    }
 
     return (BuildContext context, Widget child) {
       assert(child is Navigator, 'child must be Navigator, what is wrong?');
@@ -198,6 +196,4 @@ class FlutterBoost {
   ///register callbacks for Navigators push & pop
   void addBoostNavigatorObserver(NavigatorObserver observer) =>
       ContainerNavigatorObserver.boostObservers.add(observer);
-
-
 }
